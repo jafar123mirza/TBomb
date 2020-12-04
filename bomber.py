@@ -350,7 +350,7 @@ def workernode(mode,cc,target,count,delay,max_threads):
     bann_text()
     sys.exit()
 
-def selectnode(mode="sms"):
+def selectnode(mode="call"):
     mode=mode.lower().strip()
     try:
         clr()
@@ -359,12 +359,12 @@ def selectnode(mode="sms"):
         check_for_updates()
         notifyen()
 
-        max_limit={"sms":500,"call":15,"mail":200}
+        max_limit={"sms":500,"call":500,"mail":200}
         cc,target="",""
         if mode in ["sms","call"]:
             cc,target=get_phone_info()
-            if cc!="91":
-                max_limit.update({"sms":100})
+            if cc ="91":
+                max_limit.update({"call":500})
         elif mode=="mail":
             target=get_mail_info()
         else:
